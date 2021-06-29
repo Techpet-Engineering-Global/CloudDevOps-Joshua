@@ -1,0 +1,9 @@
+Description: >
+    Joshua Igoni / CloudDevOps
+    This template deploys a VPC
+Resources:
+    WachVPC:
+        Type: AWS::EC2::VPC
+        Properties:
+            CidrBlock: 10.0.0.0/16
+            EnableDnsHostnames: true
