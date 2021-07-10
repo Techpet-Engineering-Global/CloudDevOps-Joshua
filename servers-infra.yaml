@@ -50,12 +50,15 @@ Resources:
       UserData:
         Fn::Base64: !Sub |
          #!/bin/bash
+          sudo su -
           apt-get update -y
           apt-get install unzip awscli -y
           apt-get install apache2 -y
+          apt-get install git
+          git clone https://github.com/Joshua-Igoni/udacity-demo.git
           systemctl start apache2.service
           cd /var/www/html
-          aws s3 cp s3://udacity-demo-1/udacity.zip .
+          cp ~/udacity-demo/udacity.zip .
           unzip -o udacity.zip
       ImageId: ami-005bdb005fb00e791
       SecurityGroups:
