@@ -1,0 +1,9 @@
+server {
+        listen   80;
+        server_name  {{ SERVER_NAME }};
+        root   {{ FILE_PATH }};
+        location / {
+                index  index.php index.html index.htm;
+                autoindex off;    #enable listing of directory index
+        }
+}

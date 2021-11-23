@@ -1,0 +1,3 @@
+SERVER_NAME: "<server ip>"
+FILE_PATH: "/var/www/html"
+STUDENT_NAME: "<Student name>"
