@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "API make-changes-tutorial:HelloWorldFunction (python3.8)",
+            "invokeTarget": {
+                "target": "api",
+                "templatePath": "make-changes-tutorial/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "api": {
+                "path": "/hello",
+                "httpMethod": "get",
+                "payload": {
+                    "json": {}
+                }
+            },
+            "lambda": {
+                "runtime": "python3.8"
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "make-changes-tutorial:HelloWorldFunction (python3.8)",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "make-changes-tutorial/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {
+                    "json": {
+                        "amount": 1.42
+                    }
+                },
+                "environmentVariables": {},
+                "runtime": "python3.8"
+            }
+        }
+
+    ]
+}
